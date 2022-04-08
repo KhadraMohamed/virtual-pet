@@ -1,5 +1,10 @@
 const Pet = require('../src/pet');
 
+const MAXIMUM_FITNESS = 10;
+const INITIAL_AGE = 0;
+const INITIAL_HUNGER = 0;
+
+
 describe ('constructor' , () => {
     it ('returns an object' , () => {
         expect(new Pet('Fido')).toBeInstanceOf(Object);
@@ -11,15 +16,15 @@ describe ('constructor' , () => {
      });
      it ('has an initial age of 0' , () => {
          const pet = new Pet ('Fido');
-         expect(pet.age).toEqual(0);
+         expect(pet.age).toEqual(INITIAL_AGE);
      });
      it('has an initial hunger of 0' , () => {
          const pet = new Pet ('Fido');
-         expect(pet.hunger).toEqual(0);
+         expect(pet.hunger).toEqual(INITIAL_HUNGER);
      });
      it('has an initial fitness of 10', () => {
          const pet = new Pet ('Fido'); 
-         expect(pet.fitness).toEqual(10);
+         expect(pet.fitness).toEqual(MAXIMUM_FITNESS);
      });
 
      describe ('growUp' , () => {
@@ -38,6 +43,16 @@ describe ('constructor' , () => {
         pet.growUp();
         expect(pet.fitness).toEqual(7);
     });
+    describe ('walk' , () => {
+        it('it increases fitness by 4' , () => {
+            const pet = new Pet ('Fido');
+            pet.fitness = 8;
+            pet.walk();
+            expect (pet.fitness).toEqual(MAXIMUM_FITNESS);
+        });
+    
 });
-
-});
+     
+  });
+   
+      });
