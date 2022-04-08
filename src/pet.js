@@ -19,7 +19,7 @@ function Pet(name) {
         }
         Pet.prototype.feed = function () {
          if (this.hunger > 0) {
-             return 0
+             return 0;
          }
         }
     };
