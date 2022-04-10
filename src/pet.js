@@ -18,8 +18,8 @@ function Pet(name) {
             this.fitness= 10;
         }
         Pet.prototype.feed = function () {
-            this.hunger -3;
-         if (this.hunger > 0) {
+            this.hunger -=3;
+         if (this.hunger <= 0) {
              return 0;
          }
          Pet.prototype.checkUp = function () {

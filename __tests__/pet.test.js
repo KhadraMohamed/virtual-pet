@@ -56,6 +56,7 @@ describe ('constructor' , () => {
 describe ('feed' , () => {
     it ('decreases hunger by 3', () =>{
         const pet = new Pet ('Fido');
+        pet.hunger = 
         pet.feed();
         expect (pet.hunger).toEqual(0)
     });
