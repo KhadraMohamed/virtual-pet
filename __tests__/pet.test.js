@@ -61,24 +61,38 @@ describe ('feed' , () => {
         expect (pet.hunger).toEqual(0)
     });
     describe ('checkUp' , () => {
-        xit('if fitness is equal to or less than 3 return "I need a walk" ' , () => {
+        it('if fitness is equal to or less than 3 return "I need a walk" ' , () => {
             const pet = new Pet ('Fido');
             expect (pet.checkUp).toEqual ('I need a walk');
         });
-        xit('if hunger is 5 or more return "I am hungry" ' , () => {
+        it('if hunger is 5 or more return "I am hungry" ' , () => {
             const pet = new Pet ('Fido');
             expect (pet.checkUp).toEqual ('I am hungry');
         });
-        xit('if both are true return "I am hungry' , () => {
+        it('if both are true return "I am hungry' , () => {
             const pet = new Pet ('Fido');
             expect(pet.checkUp).toBe('I am hungry AND I need a walk');
         });
-        xit('if neither are true return "I feel great" ' ,  () => {
+        it('if neither are true return "I feel great" ' ,  () => {
             const pet = new Pet ('Fido');
             expect(pet.checkUp).toBe('I feel great');
         });
-
-     });
+        describe ('isAlive' , () => {
+            it('if fitness is 0 or less return false' , () => {
+                const pet = new Pet ('Fido');
+                expect (pet.isAlive).toBe(true);
+            });
+            it('if hunger is 10 or more return false' , () => {
+                const pet = new Pet ('Fido');
+                expect (pet.isAlive).toBe(true);
+            });
+            it('if age is 30 or more return false' , () => {
+                const pet = new Pet ('Fido');
+                expect (pet.isAlive).toBe(true); 
+            });
+        });
+        
+        });
    
    });
 
