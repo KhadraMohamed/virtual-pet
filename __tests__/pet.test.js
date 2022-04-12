@@ -56,26 +56,30 @@ describe ('constructor' , () => {
 describe ('feed' , () => {
     it ('decreases hunger by 3', () =>{
         const pet = new Pet ('Fido');
-        pet.hunger = 
         pet.feed();
         expect (pet.hunger).toEqual(0)
     });
+    it('throws an error if the pet is not alive' , () => {
+        const pet = new Pet ('Fido');
+        pet.age = 30;
+        expect(() => pet.feed()).toThrow('Your pet is no longer alive :(');
+    });
     describe ('checkUp' , () => {
-        it('if fitness is equal to or less than 3 return "I need a walk" ' , () => {
+        xit('if fitness is equal to or less than 3 return "I need a walk" ' , () => {
             const pet = new Pet ('Fido');
-            expect (pet.checkUp).toEqual ('I need a walk');
+            expect (pet.checkUp()).toEqual ('I need a walk');
         });
-        it('if hunger is 5 or more return "I am hungry" ' , () => {
+        xit('if hunger is 5 or more return "I am hungry" ' , () => {
             const pet = new Pet ('Fido');
-            expect (pet.checkUp).toEqual ('I am hungry');
+            expect (pet.checkUp()).toEqual ('I am hungry');
         });
-        it('if both are true return "I am hungry' , () => {
+        xit('if both are true return "I am hungry' , () => {
             const pet = new Pet ('Fido');
-            expect(pet.checkUp).toBe('I am hungry AND I need a walk');
+            expect(pet.checkUp()).toEqual('I am hungry AND I need a walk');
         });
-        it('if neither are true return "I feel great" ' ,  () => {
+        xit('if neither are true return "I feel great" ' ,  () => {
             const pet = new Pet ('Fido');
-            expect(pet.checkUp).toBe('I feel great');
+            expect(pet.checkUp()).toEqual('I feel great');
         });
         describe ('isAlive' , () => {
             it('if fitness is 0 or less return false' , () => {
